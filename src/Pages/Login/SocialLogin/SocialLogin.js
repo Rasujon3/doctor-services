@@ -2,6 +2,7 @@ import React from "react";
 import google from "../../../images/social/google.png";
 import facebook from "../../../images/social/facebook.png";
 import github from "../../../images/social/github.png";
+import twitter from "../../../images/social/twitter-logo.png";
 import {
   useSignInWithFacebook,
   useSignInWithGithub,
@@ -70,7 +71,7 @@ const SocialLogin = () => {
           onClick={() => signInWithTwitter()}
           className="btn btn-info w-50 d-block mx-auto"
         >
-          <img style={{ width: "30px" }} src={github} alt="" />
+          <img style={{ width: "30px" }} src={twitter} alt="" />
           <span className="px-2">Twitter Sign In</span>
         </button>
       </div>
