@@ -89,7 +89,7 @@ const Login = () => {
       </Form>
       {errorElement}
       <p>
-        New to Genious Car?{" "}
+        Don't have an account?{" "}
         <Link
           to="/register"
           className="text-primary pe-auto text-decoration-none"

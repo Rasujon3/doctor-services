@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Register.css";
 import {
@@ -14,6 +14,7 @@ const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+  let errorElement;
 
   const navigate = useNavigate();
 
@@ -25,8 +26,24 @@ const Register = () => {
     return <Loading />;
   }
 
+  if (error || updateError) {
+    errorElement = (
+      <p className="text-danger">
+        Error: {error?.message} {updateError?.message}
+      </p>
+    );
+    // setAgree(false);
+    // return;
+  }
+
+  // if (error || updateError) {
+  //   setAgree(!agree);
+  //   // return;
+  // }
+
   if (user) {
     console.log(user);
+    navigate("/home");
   }
   const handleRegister = async (event) => {
     event.preventDefault();
@@ -36,8 +53,9 @@ const Register = () => {
 
     await createUserWithEmailAndPassword(email, password);
     await updateProfile({ displayName: name });
-    navigate("/home");
+    // navigate("/home");
   };
+
   return (
     <div className="register-form">
       <h2 style={{ textAlign: "center" }}>Please Register</h2>
@@ -58,8 +76,9 @@ const Register = () => {
         />
         {/* <label className={agree ? "ps-2" : "ps-2 text-danger"} htmlFor="terms"> */}
         <label className={`ps-2 ${agree ? "" : "text-danger"}`} htmlFor="terms">
-          Accept Genious Car Terms & Condition
+          Accept All Terms & Condition
         </label>
+        {errorElement}
         <input
           disabled={!agree}
           className="w-50 mx-auto btn btn-primary mt-2"
@@ -67,6 +86,7 @@ const Register = () => {
           value="Register"
         />
       </form>
+
       <p>
         Already have an account?{" "}
         <Link
