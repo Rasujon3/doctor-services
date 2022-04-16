@@ -1,43 +1,37 @@
-import React, { useState } from "react";
-import { Carousel } from "react-bootstrap";
-import banner1 from "../../../images/banner/banner1.jpg";
-import banner2 from "../../../images/banner/banner2.jpg";
-import banner3 from "../../../images/banner/banner3.jpg";
+import React from "react";
+import { Button } from "react-bootstrap";
 
 const Banner = () => {
-  const [index, setIndex] = useState(0);
-
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
-  };
   return (
-    <Carousel activeIndex={index} onSelect={handleSelect}>
-      <Carousel.Item>
-        <img className="d-block w-100" src={banner1} alt="First slide" />
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img className="d-block w-100" src={banner2} alt="Second slide" />
-
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img className="d-block w-100" src={banner3} alt="Third slide" />
-
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
+    <div className="container">
+      <div className="row">
+        <div className="col-md-6">
+          <div className="d-flex flex-column justify-content-center h-100">
+            <h1 className="display-2 fw-bold text-blue">
+              Razor Dirt Rocket Electric Motocross
+            </h1>
+            <p className="fs-5">
+              Large pneumatic, knobby tires and dual suspension provide maximum
+              support and performance to handle rough terrain.
+            </p>
+            <div>
+              <a href="https://m.media-amazon.com/images/I/61CLm-4jlnL._AC_SL1000_.jpg">
+                <Button variant="secondary">Live Demo</Button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="col-md-6">
+          <div className="d-flex justify-content-center align-items-center py-3">
+            <img
+              className="img-fluid"
+              src="https://m.media-amazon.com/images/I/61CLm-4jlnL._AC_SL1000_.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
