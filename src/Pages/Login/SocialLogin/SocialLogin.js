@@ -61,28 +61,28 @@ const SocialLogin = () => {
         {errorElement}
         <button
           onClick={() => signInWithGoogle()}
-          className="btn btn-info d-block mx-auto my-2 login-container-width"
+          className="btn border border-primary d-block mx-auto my-2 login-container-width"
         >
           <img style={{ width: "30px" }} src={google} alt="" />
           <span className="px-2">Google Sign In</span>
         </button>
         <button
           onClick={() => signInWithFacebook()}
-          className="btn btn-info login-container-width d-block mx-auto my-2"
+          className="btn border border-primary login-container-width d-block mx-auto my-2"
         >
           <img style={{ width: "30px" }} src={facebook} alt="" />
           <span className="px-2">Facebok Sign In</span>
         </button>
         <button
           onClick={() => signInWithGithub()}
-          className="btn btn-info login-container-width d-block mx-auto my-2"
+          className="btn border border-primary login-container-width d-block mx-auto my-2"
         >
           <img style={{ width: "30px" }} src={github} alt="" />
           <span className="px-2">Github Sign In</span>
         </button>
         <button
           onClick={() => signInWithTwitter()}
-          className="btn btn-info login-container-width d-block mx-auto"
+          className="btn border border-primary login-container-width d-block mx-auto"
         >
           <img style={{ width: "30px" }} src={twitter} alt="" />
           <span className="px-2">Twitter Sign In</span>
