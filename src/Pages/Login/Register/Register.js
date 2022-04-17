@@ -78,17 +78,23 @@ const Register = () => {
           name="terms"
           id="terms"
         />
-        {/* <label className={agree ? "ps-2" : "ps-2 text-danger"} htmlFor="terms"> */}
         <label className={`ps-2 ${agree ? "" : "text-danger"}`} htmlFor="terms">
           Accept All Terms & Condition
         </label>
         {errorElement}
-        <input
+        {/* <input
           disabled={!agree}
           className="reg-btn mx-auto btn btn-primary mt-2"
           type="submit"
           value="Register"
-        />
+        /> */}
+        <button
+          disabled={!agree}
+          className="reg-btn d-block mx-auto btn btn-primary mt-2"
+          type="submit"
+        >
+          Register
+        </button>
       </form>
 
       <Link
