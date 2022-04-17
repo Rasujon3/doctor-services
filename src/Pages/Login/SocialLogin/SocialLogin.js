@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import google from "../../../images/social/google.png";
 import facebook from "../../../images/social/facebook.png";
 import github from "../../../images/social/github.png";
@@ -27,6 +27,12 @@ const SocialLogin = () => {
   let from = location.state?.from?.pathname || "/";
   let errorElement;
 
+  useEffect(() => {
+    if (user || githubUser || facebookUser || twitterUser) {
+      navigate(from, { replace: true });
+    }
+  }, [user, githubUser, facebookUser, twitterUser]);
+
   if (loading || githubLoading || facebookLoading || twitterLoading) {
     return <Loading />;
   }
@@ -36,10 +42,6 @@ const SocialLogin = () => {
         Error: {error?.message} {githubError?.message}
       </p>
     );
-  }
-
-  if (user || githubUser || facebookUser || twitterUser) {
-    navigate(from, { replace: true });
   }
 
   return (
