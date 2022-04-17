@@ -22,6 +22,12 @@ const Register = () => {
     navigate("/login");
   };
 
+  useEffect(() => {
+    if (user) {
+      navigate("/home");
+    }
+  }, [user]);
+
   if (loading || updating) {
     return <Loading />;
   }
@@ -32,19 +38,8 @@ const Register = () => {
         Error: {error?.message} {updateError?.message}
       </p>
     );
-    // setAgree(false);
-    // return;
   }
 
-  // if (error || updateError) {
-  //   setAgree(!agree);
-  //   // return;
-  // }
-
-  if (user) {
-    console.log(user);
-    navigate("/home");
-  }
   const handleRegister = async (event) => {
     event.preventDefault();
     const name = event.target.name.value;
@@ -53,7 +48,14 @@ const Register = () => {
 
     await createUserWithEmailAndPassword(email, password);
     await updateProfile({ displayName: name });
-    // navigate("/home");
+  };
+
+  const onHandleChecked = (e) => {
+    if (e.target.checked) {
+      setAgree(true);
+    } else {
+      setAgree(false);
+    }
   };
 
   return (
@@ -69,7 +71,7 @@ const Register = () => {
           required
         />
         <input
-          onClick={() => setAgree(!agree)}
+          onChange={onHandleChecked}
           type="checkbox"
           name="terms"
           id="terms"
