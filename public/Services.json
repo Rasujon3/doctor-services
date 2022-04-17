@@ -3,24 +3,24 @@
     "id": 1,
     "name": "Popular Diagnostic Center",
     "price": "600",
-    "description": "171, Charpara (Oposite to MMC), Mymensingh.",
+    "location": "171, Charpara (Oposite to MMC), Mymensingh.",
     "visitingTime": "Every Thursday, From 3 PM",
-    "img": "https://i.ibb.co/dGDkr4v/1.jpg"
+    "img": "https://i.pinimg.com/564x/c2/32/b2/c232b2a1be8ca5b390e58af80b26be16.jpg"
   },
   {
     "id": 2,
     "name": "Dr. Azmol Hospital Limited",
     "price": "500",
-    "description": "House-5, Road-4, Section-6, Mirpur",
+    "location": "House-5, Road-4, Section-6, Mirpur",
     "visitingTime": "Sat & Sun, From 3 PM",
-    "img": "https://i.ibb.co/tY8dmnP/2.jpg"
+    "img": "https://cdn.daktarbhai.com/production/daktarbhai.com/uploads/institutes/fe3ea37bf136aa24cbc8ec688a2d2d5313ef8515-dr-azmal-hospital.jpg"
   },
   {
     "id": 3,
     "name": "City Diagonostic Center",
     "price": "600",
-    "description": "Infront of Beanibazar Govt. Hostipal Gate",
+    "location": "Infront of Beanibazar Govt. Hostipal Gate",
     "visitingTime": "Mon & Wed, From 3 PM",
-    "img": "https://i.ibb.co/Yh04YVw/3.jpg"
+    "img": "https://www.mawbiz.com.bd/application/views/module/product_image/city-diagnostic-center_1.JPG"
   }
 ]

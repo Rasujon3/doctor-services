@@ -14,10 +14,15 @@ const About = () => {
           <div className="d-flex flex-column justify-content-center h-100">
             <h1 className="display-2 fw-bold text-blue">Ruhul Amin Sujon</h1>
             <p className="fs-5">
-              My goal is I would beacame a MERN Stack developer. For my dream, I
-              working hard so much. Last 4-5 months, I spent most of the time
-              for learning React JS. Everyday, I am trying to learning new
-              things.
+              My goal has always been to be a Certified MERN Stack developer.
+              Last 4-5 months, I spent most of my time learning React JS, and
+              I'm aiming to learning some new things in the upcoming days. I
+              also hope to improve my communication and public speaking skills.
+              That will be helps me to join the appropriate job sector as a full
+              time MERN Stack developer. I really want to be a proactive and
+              valuable team member at my company, wherever I work. I want to
+              lead a team, so I will improve my leadership skills and gain more
+              experience.
             </p>
             <div>
               <a href="https://ruhul-amin-sujon-portfolio.netlify.app/">
