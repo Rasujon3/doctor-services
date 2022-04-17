@@ -4,7 +4,7 @@ import "./Contact.css";
 const Contact = () => {
   return (
     <div id="contact" className="container">
-      <h2 className="text-center text-primary my-2">Contact with me</h2>
+      <h2 className="text-center text-primary my-2">Contact With Me</h2>
       <div className="contact">
         <div className="contact-left">
           <img
@@ -29,7 +29,7 @@ const Contact = () => {
               rows="10"
             ></textarea>
             <button className="btn btn-primary" type="submit">
-              Submit
+              Send Message
             </button>
           </form>
         </div>

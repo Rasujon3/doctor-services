@@ -4,8 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const CheckOut = () => {
   const handleOnSumit = (event) => {
-    const email = event.target.email.value;
-    console.log(email);
+    event.preventDefault();
     toast("Submitted Successfully");
   };
   return (
@@ -13,7 +12,7 @@ const CheckOut = () => {
       <h2 style={{ textAlign: "center" }} className="text-primary">
         Fill up this form
       </h2>
-      <form>
+      <form onSubmit={handleOnSumit}>
         <input type="text" name="name" placeholder="Your Name" />
         <input type="email" name="email" placeholder="Email Address" required />
         <input
@@ -26,7 +25,6 @@ const CheckOut = () => {
         <button
           className="reg-btn d-block mx-auto btn btn-primary mt-2"
           type="submit"
-          onClick={handleOnSumit}
         >
           Submit
         </button>
