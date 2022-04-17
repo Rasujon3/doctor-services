@@ -21,7 +21,7 @@ const Header = () => {
       >
         <Container>
           <Navbar.Brand as={Link} to="/">
-            Dr. Mahfujur Rahman
+            Dr. Ahmed Riad Chowdhury
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
