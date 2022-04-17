@@ -14,7 +14,7 @@ const Service = ({ service }) => {
       <img className="w-100" src={img} alt={name} />
       <h4 className="text-decoration-underline">Chamber-{id}</h4>
       <h2>{name}</h2>
-      <h5>Fees: {price} taka</h5>
+      <h5>Consultation fees: {price} taka</h5>
       <p>
         <small>Location: {location}</small>
       </p>

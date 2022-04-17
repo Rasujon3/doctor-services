@@ -29,17 +29,12 @@ const Blogs = () => {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body">
-              Context API is that the thanks to create global variables which
-              will be passed round the component tree. Context API is an
-              alternate to passing props manually in a very component tree.
-              Something that's also called Prop drilling. The Context API may be
-              a React structure that enables you to exchange unique details and
-              assists in solving prop-drilling from all levels of your
-              application. Context is primarily used when some data must be
-              accessible by many components at different nesting levels. Apply
-              it sparingly because it makes component reuse tougher. If you
-              merely want to avoid passing some props through many levels, the
-              component composition is often an easier solution than context.
+              Authentication is the process of verifying who someone is, on the
+              other hand Authorization is the process of verifying what specific
+              applications, files, and data a user has access to. For example,
+              the process of verifying and confirming employees ID and passwords
+              in an organization is called Authentication, but determining which
+              employee has access to which floor is called Authorization.
             </div>
           </div>
         </div>
@@ -54,7 +49,7 @@ const Blogs = () => {
               aria-controls="collapseTwo"
             >
               Q2. Why are you using firebase? What other options do you have to
-              implement authentication??
+              implement authentication?
             </button>
           </h2>
           <div
@@ -64,16 +59,18 @@ const Blogs = () => {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body">
-              Semantic HTML tags provide information about the contents of those
-              tags that goes beyond just how they look on a page. Text that is
-              enclosed in the code tag is immediately recognized by the browser
-              as some type of coding language.A semantic element clearly
-              describes its meaning to both the browser and the developer.
-              Examples of non-semantic elements: div and span tag - Tells
-              nothing about its content. Examples of semantic elements: form ,
-              table , and article tag - Clearly defines its content.It makes web
-              pages more informative and adaptable, allowing browsers and search
-              engines to better interpret content.
+              Firebase can be seen as a server-less backend for your mobile
+              apps, web apps, etc. It is a service provided by Google.Firebase
+              can be used when you do not want to spend a lot of time developing
+              your own backend. It can be used for rapid development. I have
+              been using it in my website in production. You will not have to
+              take care of servers, etc, Google will take care of it for you.
+              <br />
+              Usually, authentication by a server entails the use of a user name
+              and password. Other ways to authenticate can be through
+              Token-based authentication, Eye scanners, Speaker Recognition,
+              Fingerprint scanners, Facial recognition, Cards, Retina scans,
+              Voice recognition, Fingerprints etc.
             </div>
           </div>
         </div>
@@ -87,7 +84,7 @@ const Blogs = () => {
               aria-expanded="false"
               aria-controls="collapseThree"
             >
-              Q3. What other services does `firebase` provide other than
+              Q3. What other services does firebase provide other than
               authentication?
             </button>
           </h2>
@@ -98,16 +95,48 @@ const Blogs = () => {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body">
-              Inline element doesn't start on a new line and only occupy just
-              the width it requires. You can't set the width or height.
-              inline-block It's formatted just like the inline element, where it
-              doesn't start on a new line. BUT, you can set width and height
-              values.The major difference is that inline-block allows to set a
-              width and height on the element. Also, with display: inline , top
-              and bottom margins & paddings are not respected, and with display:
-              inline-block they are.Use inline if you want to apply a style to a
-              short span of text, and use block for rectangles areas with
-              width/height. As for inline-block, it's used naturally for images.
+              There are many services which Firebase provides, Most useful of
+              those are:
+              <ul>
+                <li>
+                  Cloud Firestore: Cloud Firestore is a flexible, scalable
+                  database for mobile, web, and server development from Firebase
+                  and Google Cloud.
+                </li>
+                <li>
+                  Cloud Functions: Firebase Cloud Functions are fully insulated.
+                  Functions are private & secure. Run your mobile backend code
+                  without managing servers and low maintenance. Boost App
+                  Engagement. 15+ Products & Solutions. Cross-Platform
+                  Solutions. For Mobile or Web Apps.
+                </li>
+                <li>
+                  Hosting: Firebase Hosting is production-grade web content
+                  hosting for developers. With a single command, you can quickly
+                  deploy web apps and serve both static and dynamic content to a
+                  global CDN.
+                </li>
+                <li>
+                  Cloud Storage: Firebase Cloud Storage is built with mobile
+                  connectivity in mind. Automatically pause and resume transfers
+                  as your app loses and regains connectivity.
+                </li>
+                <li>
+                  Google Analytics: At the heart of Firebase is Google
+                  Analytics, an unlimited analytics solution available at no
+                  charge.
+                </li>
+                <li>
+                  Predictions: Firebase Predictions uses the power of Google's
+                  machine learning to create dynamic user groups based on users'
+                  predicted behaviour.
+                </li>
+                <li>
+                  Cloud Messaging: Firebase Cloud Messaging (FCM) is a
+                  cross-platform messaging solution that lets you reliably send
+                  messages at no cost.
+                </li>
+              </ul>
             </div>
           </div>
         </div>

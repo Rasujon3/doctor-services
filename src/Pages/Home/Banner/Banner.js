@@ -17,11 +17,12 @@ const Banner = () => {
             </h1>
             <p className="fs-5">MBBS, M.Phil (Psychiatry)</p>
             <p className="fs-5">Psychiatry Specialist</p>
-            <div>
-              <a href="https://m.media-amazon.com/images/I/61CLm-4jlnL._AC_SL1000_.jpg">
-                <Button variant="secondary">Live Demo</Button>
-              </a>
-            </div>
+            <p className="fs-5 fw-bold">Assistant Professor</p>
+            <p className="fs-5">
+              <small className="text-muted">
+                Sylhet M. A. G. Osmani Medical College
+              </small>
+            </p>
           </div>
         </div>
         <div className="col-md-6">
