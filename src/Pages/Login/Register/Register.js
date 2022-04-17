@@ -34,7 +34,7 @@ const Register = () => {
 
   if (error || updateError) {
     errorElement = (
-      <p className="text-danger">
+      <p className="text-danger text-center">
         Error: {error?.message} {updateError?.message}
       </p>
     );
@@ -60,7 +60,9 @@ const Register = () => {
 
   return (
     <div className="container register-form">
-      <h2 style={{ textAlign: "center" }}>Please Register</h2>
+      <h2 style={{ textAlign: "center" }} className="text-primary">
+        Register Now
+      </h2>
       <form onSubmit={handleRegister}>
         <input type="text" name="name" placeholder="Your Name" />
         <input type="email" name="email" placeholder="Email Address" required />
@@ -89,16 +91,14 @@ const Register = () => {
         />
       </form>
 
-      <p>
-        Already have an account?{" "}
-        <Link
-          to="/login"
-          className="text-primary pe-auto text-decoration-none"
-          onClick={navigateLogin}
-        >
-          Please Login
-        </Link>
-      </p>
+      <Link
+        to="/login"
+        className="text-primary pe-auto text-decoration-none"
+        onClick={navigateLogin}
+      >
+        Already have an account?
+      </Link>
+
       <SocialLogin />
     </div>
   );

@@ -1,10 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import "./Login.css";
 import { Button, Form } from "react-bootstrap";
-import {
-  useSendPasswordResetEmail,
-  useSignInWithEmailAndPassword,
-} from "react-firebase-hooks/auth";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
@@ -24,20 +21,20 @@ const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
 
-  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
-
   useEffect(() => {
     if (user) {
       navigate(from, { replace: true });
     }
   }, [user]);
 
-  if (loading || sending) {
+  if (loading) {
     return <Loading />;
   }
 
   if (error) {
-    errorElement = <p className="text-danger">Error: {error?.message}</p>;
+    errorElement = (
+      <p className="text-danger text-center">Error: {error?.message}</p>
+    );
   }
 
   const handleSubmit = (event) => {
@@ -55,22 +52,11 @@ const Login = () => {
     navigate("/forgetPassowrd");
   };
 
-  const resetPassword = async () => {
-    const email = emailRef.current.value;
-    if (email) {
-      await sendPasswordResetEmail(email);
-      toast("Sent email");
-    } else {
-      toast("Please enter your email address");
-    }
-  };
-
   return (
     <div className="container mx-auto login-container-width">
-      <h2 className="text-primary text-center mt-2">Please Login</h2>
+      <h2 className="text-primary text-center mt-2">Login</h2>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          {/* <Form.Label>Email address</Form.Label> */}
           <Form.Control
             ref={emailRef}
             type="email"
@@ -80,7 +66,6 @@ const Login = () => {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          {/* <Form.Label>Password</Form.Label> */}
           <Form.Control
             ref={passwordRef}
             type="password"
@@ -111,14 +96,6 @@ const Login = () => {
       >
         <p>Forget Password?</p>
       </Link>
-      <br />
-      <p
-        className="text-primary d-block pe-auto text-decoration-none"
-        onClick={resetPassword}
-      >
-        <span>Forget Password?</span>
-      </p>
-
       <SocialLogin />
       <ToastContainer />
     </div>

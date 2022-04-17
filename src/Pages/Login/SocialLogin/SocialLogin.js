@@ -38,7 +38,7 @@ const SocialLogin = () => {
   }
   if (error || githubError || facebookError || twitterError) {
     errorElement = (
-      <p className="text-danger">
+      <p className="text-danger text-center">
         Error: {error?.message} {githubError?.message}
       </p>
     );

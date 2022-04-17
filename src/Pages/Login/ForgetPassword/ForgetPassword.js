@@ -27,7 +27,9 @@ const ForgetPassword = () => {
   }
 
   if (error) {
-    errorElement = <p className="text-danger">Error: {error?.message}</p>;
+    errorElement = (
+      <p className="text-danger text-center">Error: {error?.message}</p>
+    );
   }
   return (
     <div className="container mx-auto login-container-width">
