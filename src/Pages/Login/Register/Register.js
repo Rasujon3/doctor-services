@@ -59,7 +59,7 @@ const Register = () => {
   };
 
   return (
-    <div className="register-form">
+    <div className="container register-form">
       <h2 style={{ textAlign: "center" }}>Please Register</h2>
       <form onSubmit={handleRegister}>
         <input type="text" name="name" placeholder="Your Name" />
@@ -83,7 +83,7 @@ const Register = () => {
         {errorElement}
         <input
           disabled={!agree}
-          className="w-50 mx-auto btn btn-primary mt-2"
+          className="reg-btn mx-auto btn btn-primary mt-2"
           type="submit"
           value="Register"
         />
