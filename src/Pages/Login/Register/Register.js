@@ -59,7 +59,12 @@ const Register = () => {
   };
 
   return (
-    <div className="container register-form">
+    <div
+      data-aos="fade-down"
+      data-aos-easing="linear"
+      data-aos-duration="1500"
+      className="container register-form"
+    >
       <h2 style={{ textAlign: "center" }} className="text-primary">
         Register Now
       </h2>

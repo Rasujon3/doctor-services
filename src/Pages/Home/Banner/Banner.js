@@ -3,7 +3,12 @@ import { Button } from "react-bootstrap";
 
 const Banner = () => {
   return (
-    <div className="container">
+    <div
+      data-aos="fade-down"
+      data-aos-easing="linear"
+      data-aos-duration="1500"
+      className="container"
+    >
       <div className="row">
         <div className="col-md-6">
           <div className="d-flex flex-column justify-content-center h-100">

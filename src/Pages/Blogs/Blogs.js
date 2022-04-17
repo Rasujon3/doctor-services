@@ -2,7 +2,12 @@ import React from "react";
 
 const Blogs = () => {
   return (
-    <div className="container mt-2">
+    <div
+      data-aos="fade-down"
+      data-aos-easing="linear"
+      data-aos-duration="1500"
+      className="container mt-2"
+    >
       <div className="accordion" id="accordionExample">
         <div className="accordion-item mb-2">
           <h2 className="accordion-header" id="headingOne">

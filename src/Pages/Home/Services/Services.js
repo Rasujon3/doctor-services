@@ -13,7 +13,13 @@ const Services = () => {
   }, []);
 
   return (
-    <div id="services" className="container">
+    <div
+      data-aos="fade-down"
+      data-aos-easing="linear"
+      data-aos-duration="1500"
+      id="services"
+      className="container"
+    >
       <div className="row">
         <h1 className="text-primary text-center mt-5">My Services</h1>
         <div className="services-container">

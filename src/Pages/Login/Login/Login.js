@@ -53,7 +53,12 @@ const Login = () => {
   };
 
   return (
-    <div className="container mx-auto login-container-width">
+    <div
+      data-aos="fade-down"
+      data-aos-easing="linear"
+      data-aos-duration="1500"
+      className="container mx-auto login-container-width"
+    >
       <h2 className="text-primary text-center mt-2">Login</h2>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">

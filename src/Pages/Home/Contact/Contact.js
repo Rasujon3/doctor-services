@@ -3,7 +3,13 @@ import "./Contact.css";
 
 const Contact = () => {
   return (
-    <div id="contact" className="container">
+    <div
+      data-aos="fade-down"
+      data-aos-easing="linear"
+      data-aos-duration="1500"
+      id="contact"
+      className="container"
+    >
       <h2 className="text-center text-primary my-2">Contact With Me</h2>
       <div className="contact">
         <div className="contact-left">

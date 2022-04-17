@@ -12,8 +12,14 @@ import CheckOut from "./Pages/CheckOut/CheckOut/CheckOut";
 import RequireAuth from "./Pages/Login/RequireAuth/RequireAuth";
 import Blogs from "./Pages/Blogs/Blogs";
 import ForgetPassword from "./Pages/Login/ForgetPassword/ForgetPassword";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div>
       <Header />
