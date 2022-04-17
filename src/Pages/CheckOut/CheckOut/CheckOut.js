@@ -1,10 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import auth from "../../../firebase.init";
 
 const CheckOut = () => {
+  const [services, setServices] = useState([]);
+  let mapping = {};
+  const { id } = useParams();
+  console.log(id);
+
+  useEffect(() => {
+    const url =
+      "https://raw.githubusercontent.com/Rasujon3/email-password-auth/main/Services.json";
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setServices(data));
+  }, [id]);
+
+  console.log(services);
+
+  for (const service of services) {
+    if (service.id === parseInt(id)) {
+      mapping = service;
+    }
+  }
+
   const [user] = useAuthState(auth);
 
   const handleOnSumit = (event) => {
@@ -15,19 +37,14 @@ const CheckOut = () => {
     <div
       data-aos="fade-down"
       data-aos-easing="linear"
-      data-aos-duration="1500"
+      data-aos-duration="1000"
       className="container register-form"
     >
       <h2 style={{ textAlign: "center" }} className="text-primary">
-        Fill up this form
+        Fill up this form for appointment
       </h2>
       <form onSubmit={handleOnSumit}>
-        <input
-          readOnly={false}
-          type="text"
-          name="name"
-          placeholder="Your Name"
-        />
+        <input type="text" name="name" placeholder="Your Name" />
         <input
           value={user?.email && user?.email}
           readOnly={false}
@@ -37,14 +54,14 @@ const CheckOut = () => {
           required
         />
         <input
-          readOnly={false}
           type="number"
           name="number"
           placeholder="Phone Number"
           required
         />
         <input
-          readOnly={false}
+          value={mapping?.visitingTime}
+          readOnly
           type="text"
           name="timeSlote"
           placeholder="Time Slote"

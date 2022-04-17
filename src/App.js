@@ -33,7 +33,7 @@ function App() {
         <Route path="/blogs" element={<Blogs />}></Route>
         <Route path="/forgetPassowrd" element={<ForgetPassword />}></Route>
         <Route
-          path="/checkout"
+          path="/checkout/:id"
           element={
             <RequireAuth>
               <CheckOut />
