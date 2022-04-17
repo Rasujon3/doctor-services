@@ -51,6 +51,9 @@ const Login = () => {
   const navigateRegister = (event) => {
     navigate("/register");
   };
+  const navigateForgetPassword = () => {
+    navigate("/forgetPassowrd");
+  };
 
   const resetPassword = async () => {
     const email = emailRef.current.value;
@@ -94,25 +97,28 @@ const Login = () => {
         </Button>
       </Form>
       {errorElement}
-      <p>
-        Don't have an account?{" "}
-        <Link
-          to="/register"
-          className="text-primary pe-auto text-decoration-none"
-          onClick={navigateRegister}
-        >
-          Please Register
-        </Link>
+      <Link
+        to="/register"
+        className="text-primary pe-auto text-decoration-none"
+        onClick={navigateRegister}
+      >
+        <p>Don't have an account?</p>
+      </Link>
+      <Link
+        to="/forgetPassowrd"
+        className="text-primary pe-auto text-decoration-none"
+        onClick={navigateForgetPassword}
+      >
+        <p>Forget Password?</p>
+      </Link>
+      <br />
+      <p
+        className="text-primary d-block pe-auto text-decoration-none"
+        onClick={resetPassword}
+      >
+        <span>Forget Password?</span>
       </p>
-      <p>
-        Forget Password?{" "}
-        <button
-          className="btn btn-link text-primary pe-auto text-decoration-none"
-          onClick={resetPassword}
-        >
-          Reset Password
-        </button>
-      </p>
+
       <SocialLogin />
       <ToastContainer />
     </div>
