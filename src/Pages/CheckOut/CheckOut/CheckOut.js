@@ -1,8 +1,12 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import auth from "../../../firebase.init";
 
 const CheckOut = () => {
+  const [user] = useAuthState(auth);
+
   const handleOnSumit = (event) => {
     event.preventDefault();
     toast("Submitted Successfully");
@@ -13,15 +17,34 @@ const CheckOut = () => {
         Fill up this form
       </h2>
       <form onSubmit={handleOnSumit}>
-        <input type="text" name="name" placeholder="Your Name" />
-        <input type="email" name="email" placeholder="Email Address" required />
         <input
+          readOnly={false}
+          type="text"
+          name="name"
+          placeholder="Your Name"
+        />
+        <input
+          value={user?.email && user?.email}
+          readOnly={false}
+          type="email"
+          name="email"
+          placeholder="Email Address"
+          required
+        />
+        <input
+          readOnly={false}
           type="number"
           name="number"
           placeholder="Phone Number"
           required
         />
-        <input type="text" name="timeSlote" placeholder="Time Slote" required />
+        <input
+          readOnly={false}
+          type="text"
+          name="timeSlote"
+          placeholder="Time Slote"
+          required
+        />
         <button
           className="reg-btn d-block mx-auto btn btn-primary mt-2"
           type="submit"
