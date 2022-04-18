@@ -11,7 +11,6 @@ const ForgetPassword = () => {
   const emailRef = useRef("");
   const [sendPasswordResetEmail, sending, error] =
     useSendPasswordResetEmail(auth);
-  const navigate = useNavigate();
   let errorElement;
 
   const handleResetPassword = async () => {
@@ -19,12 +18,8 @@ const ForgetPassword = () => {
     if (email) {
       await sendPasswordResetEmail(email);
       await toast("Sent email, Please check your inbox");
-      await setTimeout(() => {
-        navigate("/home");
-      }, 5000);
     } else {
       toast("Please enter your email address");
-      return;
     }
   };
 
