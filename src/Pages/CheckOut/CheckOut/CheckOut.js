@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import auth from "../../../firebase.init";
@@ -9,6 +9,7 @@ const CheckOut = () => {
   const [services, setServices] = useState([]);
   let singleService = {};
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const url =
@@ -29,6 +30,9 @@ const CheckOut = () => {
   const handleOnSumit = (event) => {
     event.preventDefault();
     toast("Submitted Successfully");
+    setTimeout(() => {
+      navigate("/home");
+    }, 5000);
   };
 
   return (
