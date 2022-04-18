@@ -9,7 +9,7 @@ const Service = ({ service }) => {
     navigate(`/checkout/${id}`);
   };
   return (
-    <div className="service">
+    <div className="service grow">
       <img className="w-100" src={img} alt={name} />
       <h4 className="text-decoration-underline">Chamber-{id}</h4>
       <h2>{name}</h2>

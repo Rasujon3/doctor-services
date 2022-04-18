@@ -23,6 +23,7 @@ const Login = () => {
 
   useEffect(() => {
     if (user) {
+      toast("Login Successfully");
       navigate(from, { replace: true });
     }
   }, [user]);
@@ -45,7 +46,7 @@ const Login = () => {
     signInWithEmailAndPassword(email, password);
   };
 
-  const navigateRegister = (event) => {
+  const navigateRegister = () => {
     navigate("/register");
   };
   const navigateForgetPassword = () => {
@@ -56,7 +57,7 @@ const Login = () => {
     <div
       data-aos="fade-down"
       data-aos-easing="linear"
-      data-aos-duration="1500"
+      data-aos-duration="1000"
       className="container mx-auto login-container-width"
     >
       <h2 className="text-primary text-center mt-2">Login</h2>

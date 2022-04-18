@@ -9,7 +9,6 @@ const CheckOut = () => {
   const [services, setServices] = useState([]);
   let mapping = {};
   const { id } = useParams();
-  console.log(id);
 
   useEffect(() => {
     const url =
@@ -18,8 +17,6 @@ const CheckOut = () => {
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, [id]);
-
-  console.log(services);
 
   for (const service of services) {
     if (service.id === parseInt(id)) {

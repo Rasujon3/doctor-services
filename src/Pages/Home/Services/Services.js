@@ -16,7 +16,7 @@ const Services = () => {
     <div
       data-aos="fade-down"
       data-aos-easing="linear"
-      data-aos-duration="1500"
+      data-aos-duration="1000"
       id="services"
       className="container"
     >

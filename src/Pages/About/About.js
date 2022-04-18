@@ -6,7 +6,7 @@ const About = () => {
     <div
       data-aos="fade-down"
       data-aos-easing="linear"
-      data-aos-duration="1500"
+      data-aos-duration="1000"
       className="container"
     >
       <div className="row">
@@ -25,8 +25,14 @@ const About = () => {
               experience.
             </p>
             <div>
-              <a href="https://ruhul-amin-sujon-portfolio.netlify.app/">
-                <Button variant="secondary">My Portfolio</Button>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://ruhul-amin-sujon-portfolio.netlify.app/"
+              >
+                <Button className="grow" variant="secondary">
+                  My Portfolio
+                </Button>
               </a>
             </div>
           </div>
@@ -34,7 +40,7 @@ const About = () => {
         <div className="col-md-6">
           <div className="d-flex justify-content-center align-items-center py-3">
             <img
-              className="img-fluid"
+              className="img-fluid grow"
               src="https://i.ibb.co/YZCkmL7/ruhul-amin-sujon.png"
               alt="Ruhul Amin Sujon"
             />
