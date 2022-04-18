@@ -7,7 +7,7 @@ import auth from "../../../firebase.init";
 
 const Header = () => {
   const [user] = useAuthState(auth);
-  const handleSignOut = () => {
+  const handleLogOut = () => {
     signOut(auth);
   };
   return (
@@ -25,11 +25,11 @@ const Header = () => {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto">
+            <Nav variant="pills" className="me-auto">
               <Nav.Link href="home#services">Services</Nav.Link>
               <Nav.Link href="home#contact">Contact</Nav.Link>
             </Nav>
-            <Nav>
+            <Nav variant="tabs">
               <Nav.Link as={Link} to="/blogs">
                 Blogs
               </Nav.Link>
@@ -37,7 +37,7 @@ const Header = () => {
                 About Me
               </Nav.Link>
               {user ? (
-                <Nav.Link onClick={handleSignOut}>Logout</Nav.Link>
+                <Nav.Link onClick={handleLogOut}>Logout</Nav.Link>
               ) : (
                 <Nav.Link as={Link} to="login">
                   Login

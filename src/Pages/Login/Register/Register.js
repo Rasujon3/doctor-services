@@ -87,15 +87,9 @@ const Register = () => {
           Accept All Terms & Condition
         </label>
         {errorElement}
-        {/* <input
-          disabled={!agree}
-          className="reg-btn mx-auto btn btn-primary mt-2"
-          type="submit"
-          value="Register"
-        /> */}
         <button
           disabled={!agree}
-          className="reg-btn d-block mx-auto btn btn-primary mt-2"
+          className="reg-btn d-block mx-auto btn btn-primary mt-2 grow"
           type="submit"
         >
           Register

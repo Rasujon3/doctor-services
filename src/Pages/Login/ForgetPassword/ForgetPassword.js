@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useSendPasswordResetEmail } from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import auth from "../../../firebase.init";
@@ -10,15 +11,20 @@ const ForgetPassword = () => {
   const emailRef = useRef("");
   const [sendPasswordResetEmail, sending, error] =
     useSendPasswordResetEmail(auth);
+  const navigate = useNavigate();
   let errorElement;
 
   const handleResetPassword = async () => {
     const email = emailRef.current.value;
     if (email) {
       await sendPasswordResetEmail(email);
-      toast("Sent email");
+      await toast("Sent email, Please check your inbox");
+      await setTimeout(() => {
+        navigate("/home");
+      }, 5000);
     } else {
       toast("Please enter your email address");
+      return;
     }
   };
 
@@ -35,7 +41,7 @@ const ForgetPassword = () => {
     <div
       data-aos="fade-down"
       data-aos-easing="linear"
-      data-aos-duration="1500"
+      data-aos-duration="1000"
       className="container mx-auto login-container-width"
     >
       <h2 className="text-primary text-center mt-2">Forget Password</h2>
@@ -50,6 +56,7 @@ const ForgetPassword = () => {
         </Form.Group>
       </Form>
       <Button
+        className="grow"
         variant="primary login-container-width mx-auto d-block mb-2"
         type="submit"
         onClick={handleResetPassword}

@@ -81,7 +81,7 @@ const Login = () => {
         </Form.Group>
 
         <Button
-          variant="primary login-container-width mx-auto d-block mb-2"
+          variant="primary login-container-width mx-auto d-block mb-2 grow"
           type="submit"
         >
           Login
