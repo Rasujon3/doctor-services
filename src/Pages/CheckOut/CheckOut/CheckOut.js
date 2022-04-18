@@ -7,7 +7,7 @@ import auth from "../../../firebase.init";
 
 const CheckOut = () => {
   const [services, setServices] = useState([]);
-  let mapping = {};
+  let singleService = {};
   const { id } = useParams();
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const CheckOut = () => {
 
   for (const service of services) {
     if (service.id === parseInt(id)) {
-      mapping = service;
+      singleService = service;
     }
   }
 
@@ -30,11 +30,12 @@ const CheckOut = () => {
     event.preventDefault();
     toast("Submitted Successfully");
   };
+
   return (
     <div
       data-aos="fade-down"
       data-aos-easing="linear"
-      data-aos-duration="1000"
+      data-aos-duration="1500"
       className="container register-form"
     >
       <h2 style={{ textAlign: "center" }} className="text-primary">
@@ -57,7 +58,7 @@ const CheckOut = () => {
           required
         />
         <input
-          value={mapping?.visitingTime}
+          value={singleService?.visitingTime}
           readOnly
           type="text"
           name="timeSlote"
@@ -65,7 +66,7 @@ const CheckOut = () => {
           required
         />
         <button
-          className="reg-btn d-block mx-auto btn btn-primary mt-2"
+          className="reg-btn d-block mx-auto btn btn-primary mt-2 grow"
           type="submit"
         >
           Submit
